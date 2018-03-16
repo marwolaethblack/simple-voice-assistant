@@ -11,9 +11,9 @@ import time
 
 import speech_recognition as sr
 
-from modules.commandHandler import commandHandler 
+from modules.commandHandler import CommandHandler 
 
-
+cH = CommandHandler()
 
 
 # this is called from the background thread
@@ -28,7 +28,7 @@ def callback(recognizer, audio):
 
 
         print("Google Speech Recognition thinks you said " + text)
-        commandHandler(text)
+        cH.handler(text)
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
     except sr.RequestError as e:

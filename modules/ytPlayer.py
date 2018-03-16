@@ -6,6 +6,9 @@ import pprint
 import vlc
 
 
+
+
+
 class ytPlayer():
 
 	def yt_link_from_query(query):
