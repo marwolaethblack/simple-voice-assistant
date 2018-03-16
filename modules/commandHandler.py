@@ -21,7 +21,6 @@ class CommandHandler():
 		elif("stop" in text):
 			print("Stopping")
 			if(self.stream is not None):
-				print(self.stream)
 				self.stream.stop()
 
 
