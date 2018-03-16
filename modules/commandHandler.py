@@ -1,4 +1,5 @@
 import pyttsx3
+from modules.ytPlayer import ytPlayer
 
 
 def commandHandler(text):
@@ -7,7 +8,8 @@ def commandHandler(text):
 
 
 	if("play" in text):
-		engine.say('Playing')
+		print("Playing")
+		stream = ytPlayer.streamAudio("look at me", engine)
 		engine.runAndWait()
 	elif("find" in text or "search" in text):
 		engine.say('Searching')
