@@ -1,12 +1,6 @@
 #!/usr/bin/env python3
 
 # NOTE: this example requires PyAudio because it uses the Microphone class
-
-
-
-
-# NOTE: this example requires PyAudio because it uses the Microphone class
-
 import time
 
 import speech_recognition as sr
@@ -41,7 +35,7 @@ m = sr.Microphone()
 #with m as source:
 #    r.adjust_for_ambient_noise(source)  # we only need to calibrate once, before we start listening
 r.dynamic_energy_threshold = False
-r.energy_threshold = 500 
+r.energy_threshold = 300 
 print("Say something")
 stop_listening = r.listen_in_background(m, callback)
 # start listening in the background (note that we don't have to do this inside a `with` statement)
