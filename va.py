@@ -10,10 +10,8 @@
 import time
 
 import speech_recognition as sr
-import pyttsx3
 
-engine = pyttsx3.init()
-
+from modules.commandHandler import commandHandler 
 
 
 
@@ -25,9 +23,12 @@ def callback(recognizer, audio):
         # for testing purposes, we're just using the default API key
         # to use another API key, use `r.recognize_google(audio, key="GOOGLE_SPEECH_RECOGNITION_API_KEY")`
         # instead of `r.recognize_google(audio)`
+
         text = recognizer.recognize_google(audio)
+
+
         print("Google Speech Recognition thinks you said " + text)
-        engine.say("Google Speech Recognition thinks you said " + text)
+        commandHandler(text);
         engine.runAndWait()
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
