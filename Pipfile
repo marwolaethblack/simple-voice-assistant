@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pafy = "==0.5.4"
+"pyttsx3" = "==2.7"
+python-vlc = "==3.0.102"
+SpeechRecognition = "==3.6.1"
+wikipedia = "*"
+youtube-dl = "*"
+"pywin32" = "*"
+pyaudio = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
