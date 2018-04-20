@@ -30,6 +30,9 @@ class CommandHandler():
 			text = "It is " + str(now.hour) + (" hour " if now.hour == 1 else " hours ") + "and " + str(now.minute) + (" minute" if now.minute == 1 else " minutes")
 			say(text)
 			print(text)
+		elif("what" in text and ("date" in text or "day" in text)):
+			dt=datetime.date.today()
+			say(dt.strftime('%A %B %d, %Y'))
 		elif("tell" in text and "joke" in text):
 			joke = requests.get("https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke").json()
 			print(joke)
