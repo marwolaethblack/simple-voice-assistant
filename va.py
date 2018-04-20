@@ -8,6 +8,7 @@ import time
 import speech_recognition as sr
 
 from modules.commandHandler import CommandHandler 
+from modules.tts import say
 
 cH = CommandHandler()
 
@@ -21,16 +22,17 @@ def callback(recognizer, audio):
         # instead of `r.recognize_google(audio)`
         print('next')
         text = recognizer.recognize_google(audio)
-
-
         print("Google Speech Recognition thinks you said " + text)
         cH.handler(text)
         
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
     except sr.RequestError as e:
+        say("It seems the speech recognition service is not available right now, try again later.")
         print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
+
+#say("Welcome, say SEARCH followed by what you are looking for or PLAY followed by what you want me to play")
 
 r = sr.Recognizer()
 m = sr.Microphone()

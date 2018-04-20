@@ -4,6 +4,7 @@ import re
 import pafy
 import pprint
 import vlc
+from modules.tts import say
 
 
 
@@ -17,10 +18,10 @@ class ytPlayer():
 		search_results = re.findall(r'href=\"\/watch\?v=(.{11})', html_content.read().decode())
 		return "http://www.youtube.com/watch?v=" + search_results[0]
 
-	def streamAudio(query, engine):
+	def streamAudio(query):
 		yt_url = ytPlayer.yt_link_from_query(query)
 		video = pafy.new(yt_url)
-		engine.say("Playing " + video.title)
+		say("Playing " + video.title)
 		bestaudio = video.getbestaudio()
 		stream = vlc.MediaPlayer(bestaudio.url)
 		stream.play()
