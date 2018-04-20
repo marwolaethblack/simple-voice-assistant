@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "341326f1765410a794b06cfb48a0b338fb920a9f42e148bb75b80ed1ce83a709"
+            "sha256": "a751c9412ba494ea3faddbc00160af75e6ffd44b6708ff40c7af6e90f939cb01"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -26,10 +26,10 @@
         },
         "certifi": {
             "hashes": [
-                "sha256:14131608ad2fd56836d33a71ee60fa1c82bc9d2c8d98b7bdbc631fe1b3cd1296",
-                "sha256:edbc3f203427eef571f79a7692bb160a2b0f7ccaa31953e99bd17e307cf63f7d"
+                "sha256:13e698f54293db9f89122b0581843a782ad0934a4fe0172d2a980ba77fc61bb7",
+                "sha256:9fa520c1bacfb634fa7af20a76bcbd3d5fb390481724c597da32c719a7dca4b0"
             ],
-            "version": "==2018.1.18"
+            "version": "==2018.4.16"
         },
         "chardet": {
             "hashes": [
@@ -37,6 +37,19 @@
                 "sha256:fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"
             ],
             "version": "==3.0.4"
+        },
+        "gtts": {
+            "hashes": [
+                "sha256:63edbd7babebc60ba328fd6a798961f9ec757852b0e947d064b4b958116e4516"
+            ],
+            "index": "pypi",
+            "version": "==1.2.2"
+        },
+        "gtts-token": {
+            "hashes": [
+                "sha256:74badf3ba37773d8ba4a462a09b64de76a0ebd4015d667a6fdb041c2219283ef"
+            ],
+            "version": "==1.1.1"
         },
         "idna": {
             "hashes": [
@@ -104,6 +117,13 @@
             ],
             "version": "==2.18.4"
         },
+        "six": {
+            "hashes": [
+                "sha256:70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9",
+                "sha256:832dc0e10feb1aa2c68dcc57dbb658f1c7e65b9b61af69048abc87a2db00a0eb"
+            ],
+            "version": "==1.11.0"
+        },
         "speechrecognition": {
             "hashes": [
                 "sha256:d99949d61221ff44fd328b61e88b75a44103ca58da5dd948a8f388b3cec5057e"
@@ -127,11 +147,11 @@
         },
         "youtube-dl": {
             "hashes": [
-                "sha256:4eec79c9c5825874dc5b66f5f8665cdab493b4147ee1056ac1594642cd44c709",
-                "sha256:7a32100ed991efd58dd1b2ade5a569625644719669731ea294595e08a2d2ad8e"
+                "sha256:021db345b2deaf88778a0f18ae05828c105d013eb436f39524d89fa025ea1fc2",
+                "sha256:0a08ab4449104a637da2a35c403e6dd83271553e5615e4a7c93662e2d78d0ed1"
             ],
             "index": "pypi",
-            "version": "==2018.4.9"
+            "version": "==2018.4.16"
         }
     },
     "develop": {}

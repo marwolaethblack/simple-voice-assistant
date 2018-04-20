@@ -12,6 +12,7 @@ wikipedia = "*"
 youtube-dl = "*"
 "pywin32" = "*"
 pyaudio = "*"
+gtts = "*"
 
 [dev-packages]
 
