@@ -10,5 +10,5 @@ PLAY - When it recognized that you've said play it takes everything after 'play'
 STOP - Stops a stream started by PLAY. If no stream is running it informs you that there is nothing to stop.  
 SEARCH - Takes everything after the search command and searches wikipedia for the first result which is then read out loud.  
 TIME - Tells you the current time  
-DATE/DAy - Tells you the current date  
+DATE/DAY - Tells you the current date  
 JOKE - Tells you a joke
