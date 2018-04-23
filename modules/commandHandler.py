@@ -103,7 +103,7 @@ class CommandHandler():
 
 
 		elif("thank you" in text):
-			say("No problem my nigga")
+			say("Gotchu fam")
 
 
 		elif(("why" in text and "so" in text and "bad" in text) or "sucks" in text):
