@@ -22,7 +22,28 @@ class CommandHandler():
 			query = text.split("play",1)[1]
 			print(query)
 			self.stream = ytPlayer.streamAudio(query)
-			print(self.stream)
+			self.stream.audio_set_volume(99)
+			print(self.stream.audio_get_volume())
+		elif("turn down the volume" in text):
+			if(self.stream is not None):
+				currentVolume = self.stream.audio_get_volume()
+				if(currentVolume == 33):
+					say("Cannot decrease volume any more.")
+				else:
+					newVolume = currentVolume - 33
+					self.stream.audio_set_volume(newVolume)
+			else:
+				say("No stream is playing right now")
+		elif("turn up the volume" in text):
+			if(self.stream is not None):
+				currentVolume = self.stream.audio_get_volume()
+				if(currentVolume == 99):
+					say("Cannot increase the volume any more")
+				else:	
+					newVolume = currentVolume + 33
+					self.stream.audio_set_volume(newVolume)
+			else:
+				say("No stream is playing right now")
 		elif("search" in text):
 			query = text.split("search",1)[1]
 			result = wikipedia.search(query)
