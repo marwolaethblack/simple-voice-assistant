@@ -29,6 +29,7 @@ class CommandHandler():
 				currentVolume = self.stream.audio_get_volume()
 				if(currentVolume == 33):
 					say("Cannot decrease volume any more.")
+					print("Cannot decrease the volume any more")
 				else:
 					newVolume = currentVolume - 33
 					self.stream.audio_set_volume(newVolume)
@@ -39,6 +40,7 @@ class CommandHandler():
 				currentVolume = self.stream.audio_get_volume()
 				if(currentVolume == 99):
 					say("Cannot increase the volume any more")
+					print("Cannot increase the volume any more")
 				else:	
 					newVolume = currentVolume + 33
 					self.stream.audio_set_volume(newVolume)
