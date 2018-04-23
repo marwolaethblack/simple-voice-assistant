@@ -8,12 +8,16 @@ from modules.tts import say
 
 
 class CommandHandler():
+
 	stream = None
 
 
 	def handler(self,text):
 		
 		if("play" in text):
+			if(self.stream is not None):
+				self.stream.stop()
+				stream = None
 			print("Playing")
 			query = text.split("play",1)[1]
 			print(query)
@@ -36,7 +40,7 @@ class CommandHandler():
 		elif("tell" in text and "joke" in text):
 			joke = requests.get("https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke").json()
 			print(joke)
-			say(joke["setup"] + "   " + joke["punchline"])
+			say(joke["setup"] + "    " + joke["punchline"])
 		elif("stop" in text):
 			if(self.stream is not None):
 				print("Stopping")
@@ -47,7 +51,7 @@ class CommandHandler():
 				print("Nothing to stop")
 				say("Nothing to stop")
 		elif("thank you" in text):
-			say("Gotchu FAM")
+			say("No problem my nigga")
 		elif(("why" in text and "so" in text and "bad" in text) or "sucks" in text):
 			say("Sorry but please be patient with me. I am autistic.")
 

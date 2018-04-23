@@ -24,9 +24,11 @@ def callback(recognizer, audio):
         text = recognizer.recognize_google(audio)
         print("Google Speech Recognition thinks you said " + text)
         cH.handler(text)
+        print('finished command')
         
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
+        say("I did not get that, could you repeat.")
     except sr.RequestError as e:
         say("It seems the speech recognition service is not available right now, try again later.")
         print("Could not request results from Google Speech Recognition service; {0}".format(e))
