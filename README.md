@@ -1,8 +1,9 @@
 # simple-voice-assistant
 A simple voice asssistant using the Speech Recognition python module and google text to speech module.
+Written in Python 3.
 
 Requires pipenv to install dependecies and vlc to stream audio.  
-Run `pipenv install` to install them. Next run `pipenv shell` followed by `python3 va.py` to run the program.
+Run `pipenv install` to install them. Next run `pipenv shell` followed by `python3 va.py` or `python va.py` depending on your python installation, to run the program.
 
 The voice assisstant listens to specific keywords or commands.  
 The key words implemented are:  
