@@ -11,12 +11,13 @@ class CommandHandler():
 
 	stream = None
 	searchEngine = "Google"
+	name = "alexa"
 
 
 	def handler(self,text):
 		text = text.lower()
 
-		if("play" in text):
+		if( (self.name + " play") in text):
 			if(self.stream is not None):
 				self.stream.stop()
 				stream = None
@@ -54,7 +55,7 @@ class CommandHandler():
 				say("No stream is playing right now")
 
 
-		elif("wikipedia" in text):
+		elif((self.name + " wikipedia") in text):
 			query = text.split("wikipedia",1)[1]
 			result = wikipedia.search(query)
 			summary = wikipedia.summary(result[0])
@@ -62,7 +63,7 @@ class CommandHandler():
 			say(summary)
 
 
-		elif("search" in text):
+		elif((self.name + " search") in text):
 			query = text.split("search",1)[1]
 			result = "No result"
 			if(self.searchEngine == "Google"):
@@ -73,19 +74,19 @@ class CommandHandler():
 			say(result)
 
 
-		elif("what" in text and "time" in text):
+		elif((self.name + " what") in text and "time" in text):
 			now = datetime.datetime.now()
 			text = "It is " + str(now.hour) + (" hour " if now.hour == 1 else " hours ") + "and " + str(now.minute) + (" minute" if now.minute == 1 else " minutes")
 			say(text)
 			print(text)
 
 
-		elif("what" in text and ("date" in text or "day" in text)):
+		elif((self.name + " what") in text and ("date" in text or "day" in text)):
 			dt=datetime.date.today()
 			say(dt.strftime('%A %B %d, %Y'))
 
 
-		elif("tell" in text and "joke" in text):
+		elif((self.name + " tell") in text and "joke" in text):
 			joke = requests.get("https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke").json()
 			print(joke)
 			say(joke["setup"] + "    " + joke["punchline"])
@@ -102,8 +103,16 @@ class CommandHandler():
 				say("Nothing to stop")
 
 
+		elif("change your name to" in text):
+			new_name = text.split("to",1)[1]
+			self.name = new_name.lstrip().lower()
+			say("My new name is " + self.name)
+
+		elif("what is your name" in text.lower() or "what's your name" in text.lower()):
+			say("Hello my name is " + self.name + ". Nice to meet you !")
+
 		elif("thank you" in text):
-			say("Gotchu fam")
+			say("No problem.")
 
 
 		elif(("why" in text and "so" in text and "bad" in text) or "sucks" in text):
