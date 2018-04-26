@@ -9,8 +9,12 @@ def searchDDG(query):
     return soup.find("a", class_="result__snippet").get_text()
 def searchGoogle(query):
     response = requests.get("https://www.google.com/search?q=" + query + "&hl=en")
-    soup = BeautifulSoup(response.text, 'html.parser')
-    content = soup.find("td", id="rhs_block").get_text(separator=" ")
+    try:
+        soup = BeautifulSoup(response.text, 'html.parser')
+        content = soup.find("td", id="rhs_block").get_text(separator=" ")
+    except Exception as e:
+        return "Sorry no results for your search."
+   
     #Remove the People also search for field
     return truncate_string(content, "People also search for")
 

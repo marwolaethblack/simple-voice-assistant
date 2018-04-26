@@ -64,7 +64,7 @@ class CommandHandler():
 
 
 		elif((self.name + " search") in text):
-			query = text.split("search",1)[1]
+			query = text.split("search",1)[1].lstrip()
 			result = "No result"
 			if(self.searchEngine == "Google"):
 				result = searchGoogle(query)
