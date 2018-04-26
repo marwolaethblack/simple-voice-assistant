@@ -5,6 +5,9 @@ Written in Python 3.
 Requires pipenv to install dependecies and vlc to stream audio.  
 Run `pipenv install` to install them. Next run `pipenv shell` followed by `python3 va.py` or `python va.py` depending on your python installation, to run the program.
 
+The default name of the VA is Alexa. Most commands must be prepended by its name to work.  
+e.g. `Alexa play Cotton Eyed Joe` or `Alexa wikipedia George Washington`  
+
 The voice assisstant listens to specific keywords or commands.  
 The key words implemented are:  
 PLAY - When it recognized that you've said play it takes everything after 'play' and searches youtube for the first result whose audio is streamed afterwards  
@@ -15,3 +18,5 @@ WIKIPEDIA - Takes everything after the wikipedia command and searches wikipedia 
 TIME - Tells you the current time   
 DATE/DAY - Tells you the current date  
 JOKE - Tells you a joke
+WHAT IS YOUR NAME - Tells you its current name
+CHANGE YOUR NAME TO - Changes the name to your input
